@@ -1,0 +1,12 @@
+0000000000000000000000000000000000000000 4e8e2e93a45007ec8d8a003c5ff2d7366e821b69 sboyd <sboyd@csumb.edu> 1518021120 +0000	commit (initial): 1st push
+4e8e2e93a45007ec8d8a003c5ff2d7366e821b69 e0c0e35d8c4480e0ae6f9b898acfb884503a6b02 sboyd <sboyd@csumb.edu> 1518021424 +0000	commit: Partner A push
+e0c0e35d8c4480e0ae6f9b898acfb884503a6b02 fcf789790b1fd01c275e102a344a1f9a0782f44a sboyd <sboyd@csumb.edu> 1518021584 +0000	commit: Partner A push
+fcf789790b1fd01c275e102a344a1f9a0782f44a 0ae1b9fdd7681997c4843b91ebf7e9de9e68a938 sboyd <sboyd@csumb.edu> 1518022178 +0000	commit: add new file
+0ae1b9fdd7681997c4843b91ebf7e9de9e68a938 628bcf0edbaf99e171ce217cdf49e7bb71c5efb2 sboyd <sboyd@csumb.edu> 1518022248 +0000	pull origin master: Merge made by the 'recursive' strategy.
+628bcf0edbaf99e171ce217cdf49e7bb71c5efb2 fa3afe5ac545c6ea458ca42d438858b6100da5ae sboyd <sboyd@csumb.edu> 1518022324 +0000	commit: change title
+fa3afe5ac545c6ea458ca42d438858b6100da5ae fd2c5d3d61979e3d37c903227e451a33b42250f0 sboyd <sboyd@csumb.edu> 1518023871 +0000	commit: restart
+fd2c5d3d61979e3d37c903227e451a33b42250f0 67173023fe73c39c6cb4b5cbace3fc644358dd9c sboyd <sboyd@csumb.edu> 1518023981 +0000	commit: title change
+67173023fe73c39c6cb4b5cbace3fc644358dd9c 67173023fe73c39c6cb4b5cbace3fc644358dd9c sboyd <sboyd@csumb.edu> 1518024116 +0000	reset: moving to HEAD
+67173023fe73c39c6cb4b5cbace3fc644358dd9c 67173023fe73c39c6cb4b5cbace3fc644358dd9c sboyd <sboyd@csumb.edu> 1518024143 +0000	reset: moving to HEAD
+67173023fe73c39c6cb4b5cbace3fc644358dd9c 32cf4e6199bc152d2cbc6efbd043283379a253dd sboyd <sboyd@csumb.edu> 1518024283 +0000	commit: updated title
+32cf4e6199bc152d2cbc6efbd043283379a253dd a8ee63bf91464d774160afee365e860e1a84a851 sboyd <sboyd@csumb.edu> 1518024884 +0000	pull origin master: Fast-forward
