@@ -23,6 +23,8 @@
         
         <h1><u>Labs</u></h1>
         <a href="./Labs/PersonalPortfolio/index.html">Personal Portfolio</a>
+        <br>
+        <a href="./Labs/Number Challenge/random.php">Number Challenge</a>
     </body>
 
 </html>
