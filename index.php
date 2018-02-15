@@ -17,7 +17,8 @@
     <body>
         <h1><u>Assignments</u></h1>
         <a href="./Assignments/Homework 1/index.html">Homework 1</a>
-        
+        <br>
+        <a href="./Assignments/Homework 2/index.php">Homework 2</a>
         <hr/>
         
         
