@@ -25,6 +25,10 @@
         <a href="./Labs/PersonalPortfolio/index.html">Personal Portfolio</a>
         <br>
         <a href="./Labs/Number Challenge/random.php">Number Challenge</a>
+        <br>
+        <a href="./Labs/Password Generator/index.php">Password Generator</a>
+        <br>
+        <a href="./Labs/Slot Machine/index.php">Slot Machine</a>
     </body>
 
 </html>

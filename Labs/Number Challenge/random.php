@@ -1,14 +1,27 @@
-<?php 
 
-$numbers = array(0,1,2,3);
 
-$numbers[0] = rand(1,10)+1;
-$numbers[1] = rand(1,20)+1;
-$numbers[2] = rand(1,30) +1;
-$numbers[3] = rand(1,40)+1;
-
-foreach ($numbers as $n)
-{
-    echo $n . '<br>';
-}
-?>
+<html>
+    <head>
+        <?php 
+             $n = rand(1,10)+1;
+             
+             if($_POST['answer'] == $n)
+             {
+                 echo "You got it!"  . "<br>";
+             }
+             else
+             {
+                 echo "Nice try!" . "<br";
+             }
+        ?>
+    </head>
+    
+    <body>
+        <form action = "<?php $_PHP_SELF ?>" method = "POST">
+            Guess the number??? 1 to 10
+            <br>
+            <input type="text" name="answer"/>
+            <input type="submit" value="Guess"/>
+        </form>
+    </body>
+</html>
