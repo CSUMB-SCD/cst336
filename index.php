@@ -30,6 +30,8 @@
         <a href="./Labs/Password Generator/index.php">Password Generator</a>
         <br>
         <a href="./Labs/Slot Machine/index.php">Slot Machine</a>
+        <br>
+        <a href="./Labs/Arrays/index.php">Arrays</a>
     </body>
 
 </html>
