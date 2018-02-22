@@ -9,30 +9,30 @@
            
            <br>
            Age group: <select name = "age_groups">
-               <option name="group">18-21 years old</option>
-               <option name="group">21-40 years old</option>
-               <option name="group">40 years old or over</option>
+               <option name="group" value="18-21 years old">18-21 years old</option>
+               <option name="group" value="21-40 years old">21-40 years old</option>
+               <option name="group" value="40 years old or over">40 years old or over</option>
            </select><br>
            <br>
            
            Do you smoke? <select name="q1">
-               <option name="q1_a">Yes</option>
-               <option name="q1_a">No</option>
+               <option name="q1_a" value="y">Yes</option>
+               <option name="q1_a" value="n">No</option>
            </select><br>
            
            Do you drink? <select name="q2">
-               <option name="q2_a">Yes</option>
-               <option name="q2_a">No</option>
+               <option name="q2_a" value = "y">Yes</option>
+               <option name="q2_a" value = "n">No</option>
            </select><br>
            <br>
            
            How active do you consider yourself?<br>
            <p>Sedentary</p> <p>Neutral</p> <p>Very Active</p><br>
-           <input type="radio" name="r_opt"/>
-           <input type="radio" name="r_opt"/>
-           <input type="radio" name="r_opt"/>
-           <input type="radio" name="r_opt"/>
-           <input type="radio" name="r_opt"/><br>
+           <input id = "radio_bttn1" type="radio" name="r_opt"/>
+           <input id = "radio_bttn2" type="radio" name="r_opt"/>
+           <input id = "radio_bttn3" type="radio" name="r_opt"/>
+           <input id = "radio_bttn4" type="radio" name="r_opt"/>
+           <input id = "radio_bttn5" type="radio" name="r_opt"/><br>
            <br>
            <input type="submit" name="submit_bttn" value="Submit"/>
            
@@ -43,11 +43,50 @@
     <?php 
         if(isset($_GET['submit_bttn']))
         {
-            if(1){
-                echo "Form completed";
+            if($_GET['email_field'] != "" && isset($_GET['r_opt']))
+            {
+                if($_GET['age_groups'] == "40 years old or over")
+                {
+                    echo "<br>You are " . $_GET['age_groups'] . ".";
+                    
+                    if($_GET['q1'] == "y")
+                    {
+                        echo "<br>You do smoke.";
+                    }
+                    else{
+                        echo "<br>You do not smoke.";
+                    }
+                    
+                    if($_GET['q2'] == "y")
+                    {
+                        echo "<br>You do drink.";
+                    }
+                    else{
+                        echo "<br>You do not drink.";
+                    }
+                }
+                else{
+                    echo "<br>You are between " . $_GET['age_groups'] . ".";
+                    
+                    if($_GET['q1'] == "y")
+                    {
+                        echo "<br>You do smoke.";
+                    }
+                    else{
+                        echo "<br>You do not smoke.";
+                    }
+                    
+                    if($_GET['q2'] == "y")
+                    {
+                        echo "<br>You do drink.";
+                    }
+                    else{
+                        echo "<br>You do not drink.";
+                    }
+                }
             }
-            else{
-                echo "Form incomplete";
+            else {
+                echo "<br>All fields must be complete!";
             }
         }
     ?>
