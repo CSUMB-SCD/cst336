@@ -1,0 +1,20 @@
+[26-Feb-2018 20:26:35 UTC] PHP Warning:  key() expects parameter 1 to be array, string given in /home/ubuntu/workspace/Labs/Arrays/index.php on line 75
+[26-Feb-2018 20:26:35 UTC] PHP Stack trace:
+[26-Feb-2018 20:26:35 UTC] PHP   1. {main}() /home/ubuntu/workspace/Labs/Arrays/index.php:0
+[26-Feb-2018 20:26:35 UTC] PHP   2. getHand() /home/ubuntu/workspace/Labs/Arrays/index.php:82
+[26-Feb-2018 20:26:35 UTC] PHP   3. key() /home/ubuntu/workspace/Labs/Arrays/index.php:75
+[26-Feb-2018 20:26:35 UTC] PHP Warning:  key() expects parameter 1 to be array, string given in /home/ubuntu/workspace/Labs/Arrays/index.php on line 75
+[26-Feb-2018 20:26:35 UTC] PHP Stack trace:
+[26-Feb-2018 20:26:35 UTC] PHP   1. {main}() /home/ubuntu/workspace/Labs/Arrays/index.php:0
+[26-Feb-2018 20:26:35 UTC] PHP   2. getHand() /home/ubuntu/workspace/Labs/Arrays/index.php:83
+[26-Feb-2018 20:26:35 UTC] PHP   3. key() /home/ubuntu/workspace/Labs/Arrays/index.php:75
+[26-Feb-2018 20:26:35 UTC] PHP Warning:  key() expects parameter 1 to be array, string given in /home/ubuntu/workspace/Labs/Arrays/index.php on line 75
+[26-Feb-2018 20:26:35 UTC] PHP Stack trace:
+[26-Feb-2018 20:26:35 UTC] PHP   1. {main}() /home/ubuntu/workspace/Labs/Arrays/index.php:0
+[26-Feb-2018 20:26:35 UTC] PHP   2. getHand() /home/ubuntu/workspace/Labs/Arrays/index.php:84
+[26-Feb-2018 20:26:35 UTC] PHP   3. key() /home/ubuntu/workspace/Labs/Arrays/index.php:75
+[26-Feb-2018 20:26:35 UTC] PHP Warning:  key() expects parameter 1 to be array, string given in /home/ubuntu/workspace/Labs/Arrays/index.php on line 75
+[26-Feb-2018 20:26:35 UTC] PHP Stack trace:
+[26-Feb-2018 20:26:35 UTC] PHP   1. {main}() /home/ubuntu/workspace/Labs/Arrays/index.php:0
+[26-Feb-2018 20:26:35 UTC] PHP   2. getHand() /home/ubuntu/workspace/Labs/Arrays/index.php:85
+[26-Feb-2018 20:26:35 UTC] PHP   3. key() /home/ubuntu/workspace/Labs/Arrays/index.php:75
