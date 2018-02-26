@@ -89,17 +89,44 @@
     echo $players[2][2] .'</br>';
     echo $players[3][2] .'</br>';
 
-
+     shuffle($players);
 ?>
         <div id='players'>
-            <ul>
-                <?php 
-                    foreach ($player_names as $num)
+            <!--<ul>-->
+            <!--    ?php -->
+                
+                    // foreach($players as $player)
+                    // {
+                    //     for($i = 0; $i < count($player[1]); $i++)
+                    //     {
+                    //         echo '<img src = "' . $player[1][$i] . '"/>';
+                    //     }
+                    //     echo '<br';
+                    // }
+                    // foreach ($player_names as $num)
+                    // {
+                    //     echo '<li><img class="pic" src = "'. $player_images[$num].'"</br></li>';
+                    // }
+            <!--    ?>-->
+            <!--</ul>-->
+            
+            
+            <table>
+                <?php
+                for($i = 0; $i < count($players); $i++)
+                {
+                    echo '<tr> ';
+                    echo '<td>' . '<img src= "' . $players[$i][0] . '"/></td>';
+                    
+                    for($j = 0; $j < count($players[$i][1]); $j++)
                     {
-                        echo '<li><img class="pic" src = "'. $player_images[$num].'"</br></li>';
+                        echo '<td>' . '<img src = "' . $players[$i][1][$j] . '"/></td>';
                     }
+                    echo '</tr>';
+                }
+                
                 ?>
-            </ul>
+            </table>
         </div>
         <div id = "footer" class "center">
             <form>
