@@ -84,31 +84,11 @@
     $players = getHand($players,$player_images["Bob"],$suit);
     $players = getHand($players,$player_images["PowderPuff"],$suit);
     
-    echo $players[0][2] .'</br>';
-    echo $players[1][2] .'</br>';
-    echo $players[2][2] .'</br>';
-    echo $players[3][2] .'</br>';
 
      shuffle($players);
 ?>
         <div id='players'>
-            <!--<ul>-->
-            <!--    ?php -->
-                
-                    // foreach($players as $player)
-                    // {
-                    //     for($i = 0; $i < count($player[1]); $i++)
-                    //     {
-                    //         echo '<img src = "' . $player[1][$i] . '"/>';
-                    //     }
-                    //     echo '<br';
-                    // }
-                    // foreach ($player_names as $num)
-                    // {
-                    //     echo '<li><img class="pic" src = "'. $player_images[$num].'"</br></li>';
-                    // }
-            <!--    ?>-->
-            <!--</ul>-->
+    
             
             
             <table>
@@ -122,6 +102,8 @@
                     {
                         echo '<td>' . '<img src = "' . $players[$i][1][$j] . '"/></td>';
                     }
+                    
+                    echo '<td>' . $players[$i][2] . '</td>';
                     echo '</tr>';
                 }
                 
