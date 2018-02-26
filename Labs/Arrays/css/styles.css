@@ -1,0 +1,41 @@
+h1{
+    text-align: center;
+    font-size:70px;
+    color: gray;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 10px;
+}
+#players{
+    width: 70%;
+    margin:auto;
+}
+#players ul {
+    text-align: left;
+}
+#players li {
+    list-style:none;
+    veritcal-align:middle;
+}
+.pic{
+    height: 140px;
+    width: 140px;
+}
+#footer{
+    border: 0px solid black;
+    float:none;
+    margin: 10px;
+    text-align:center;
+}
+#buttonn{
+    position: relative;
+    background-color: #4CAF50;
+    border: none;
+    font-size: 28px;
+    color: #FFFFFF;
+    width: 200px;
+    text-align: center;
+}
+#buttonn:hover{
+    background-color: green;
+    color: white;
+}

@@ -1,0 +1,8 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[remote "project"]
+	url = https://github.com/CSUMB-SCD/cst336-project.git
+	fetch = +refs/heads/*:refs/remotes/project/*
