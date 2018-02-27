@@ -36,9 +36,7 @@
            <br>
            <input type="submit" name="submit_bttn" value="Submit"/>
            
-           <?php
-            echo " ";
-            ?>
+          
            
         </form>
         
