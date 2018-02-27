@@ -39,12 +39,13 @@
            
         </form>
         
-        
+        <?php
+            echo " ";
+        ?>
         
     </body>
     
     <?php 
-        echo " ";
         if(isset($_GET['submit_bttn']))
         {
             if($_GET['email_field'] != "" && isset($_GET['r_opt']))
