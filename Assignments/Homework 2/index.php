@@ -28,11 +28,11 @@
            
            How active do you consider yourself?<br>
            <p>Sedentary</p> <p>Neutral</p> <p>Very Active</p><br>
-           <input id = "radio_bttn1" type="radio" name="r_opt"/>
-           <input id = "radio_bttn2" type="radio" name="r_opt"/>
-           <input id = "radio_bttn3" type="radio" name="r_opt"/>
-           <input id = "radio_bttn4" type="radio" name="r_opt"/>
-           <input id = "radio_bttn5" type="radio" name="r_opt"/><br>
+           <input id = "radio_bttn1" type="radio" name="r_opt" value = "1"/>
+           <input id = "radio_bttn2" type="radio" name="r_opt" value = "2"/>
+           <input id = "radio_bttn3" type="radio" name="r_opt" value = "3"/>
+           <input id = "radio_bttn4" type="radio" name="r_opt" value = "4"/>
+           <input id = "radio_bttn5" type="radio" name="r_opt" value = "5"/><br>
            <br>
            <input type="submit" name="submit_bttn" value="Submit"/>
            
@@ -86,7 +86,7 @@
                 }
             }
             else {
-                echo "<br>All fields must be complete!";
+                echo '<br<p id = "error">All fields must be complete!';
             }
         }
     ?>
