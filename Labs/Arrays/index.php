@@ -27,7 +27,7 @@
    
     $players = array();
     
-    function getHand($players,$player,$suit){
+    function getHand($players,$key,$player,$suit){
         $points = 0;
         $card_index = array();
         $suit_index = array("hearts","diamonds","spades","clubs");
@@ -72,35 +72,93 @@
         }
         
        
-        $players[] = array($player,$cards,$points);
+        $players[] = array(array($key, $player), $cards,$points);
         
         
         return $players;
        
     }
+        
+     
+function displayWinner($players) 
+{
+ 
+     if($players[0][2] > $players[1][2] && $players[0][2] > $players[2][2] && $players[0][2] > $players[3][2])
+     {
+        $winner = $players[0][0][0]; 
+        echo '<div class="winner">' . $winner . ' is the winner'. '</div>'; 
+      
+         
+     }
+    else if($players[1][2] > $players[0][2] && $players[1][2] > $players[2][2] && $players[1][2] > $players[3][2])
+    {
+        $winner = $players[1][0][0]; 
+        echo '<div class="winner">' . $winner . ' is the winner'. '</div>'; 
     
-    $players = getHand($players,$player_images["Chris"],$suit);
-    $players = getHand($players,$player_images["Sam"],$suit);
-    $players = getHand($players,$player_images["Bob"],$suit);
-    $players = getHand($players,$player_images["PowderPuff"],$suit);
+    }
+    else if($players[2][2] > $players[0][2] && $players[2][2] > $players[1][2] && $players[2][2] > $players[3][2])
+    {
+        $winner = $players[2][0][0]; 
+        echo '<div class="winner">' . $winner . ' is the winner'. '</div>'; 
+        return $winner; 
+        
+    }
+    else if($players[3][2] > $players[0][2] && $players[3][2] > $players[1][2] && $players[3][2] > $players[2][2])
+    {
+        $winner = $players[3][0][0]; 
+        echo '<div class="winner">' .$winner . ' is the winner' . '<div>'; 
+        return $winner; 
+    }
+    else {
+        echo '<div class="winner">' . ' Tie no winner' . '<div>'; 
+    }
+  
+}
+      
+     
     
-    echo $players[0][2] .'</br>';
-    echo $players[1][2] .'</br>';
-    echo $players[2][2] .'</br>';
-    echo $players[3][2] .'</br>';
+    $players = getHand($players,"Chris",$player_images["Chris"],$suit);
+    $players = getHand($players,"Sam",$player_images["Sam"],$suit);
+    $players = getHand($players,"Bob",$player_images["Bob"],$suit);
+    $players = getHand($players,"PowderPuff",$player_images["PowderPuff"],$suit);
+
+    shuffle($players);
 
 
 ?>
+
+
+
         <div id='players'>
-            <ul>
-                <?php 
-                    foreach ($player_names as $num)
+    
+            
+            
+            <table>
+                <?php
+                for($i = 0; $i < count($players); $i++)
+                {
+                    echo '<tr> ';
+                    echo '<td>' . '<img class="pic" src= "' . $players[$i][0][1] . '"/>' . '<br><h2>'.$players[$i][0][0] . '</h2>' .'</td>';
+                    
+                    
+                    for($j = 0; $j < count($players[$i][1]); $j++)
                     {
-                        echo '<li><img class="pic" src = "'. $player_images[$num].'"</br></li>';
+                        echo '<td class="cards">' . '<img src = "' . $players[$i][1][$j] . '"/></td>';
                     }
+                    
+                    echo '<td class="score">' . $players[$i][2] . '</td>';
+                    echo '</tr>';
+                }
+                
+
                 ?>
-            </ul>
+            </table>
+
         </div>
+        
+        <?php
+            displayWinner($players);
+        ?>    
         <div id = "footer" class "center">
             <form>
                 <input id="buttonn" type="button" value="Play Again" onClick="window.location.reload()">

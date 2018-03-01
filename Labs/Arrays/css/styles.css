@@ -9,16 +9,23 @@ h1{
     width: 70%;
     margin:auto;
 }
-#players ul {
-    text-align: left;
+table, tr{
+    border-collapse: collapse;
+    padding-right: 35px; 
 }
-#players li {
-    list-style:none;
-    veritcal-align:middle;
+.cards{
+    padding-right: 10px; 
 }
 .pic{
     height: 140px;
     width: 140px;
+    padding-right: 20px;
+}
+.score{
+    padding-left: 50px;
+    font-size:40px;
+    color: green;
+    font-family: Arial, Helvetica, sans-serif;
 }
 #footer{
     border: 0px solid black;
@@ -38,4 +45,10 @@ h1{
 #buttonn:hover{
     background-color: green;
     color: white;
+}
+.winner{
+    font-size:40px;
+    text-align: center;
+    color: green;
+    font-family: Arial, Helvetica, sans-serif;
 }
