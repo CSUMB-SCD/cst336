@@ -17,3 +17,6 @@ p{
 #radio_bttn5{
     margin-left:30px;
 }
+#error{
+    color: red;
+}

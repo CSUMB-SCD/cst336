@@ -22,7 +22,7 @@
    
    $player_images = array("Chris"=>"./img/players/kitty1.png", "Sam" => "./img/players/kitty2.png", "Bob" => "./img/players/kitty3.png", "PowderPuff" => "./img/players/kitty4.png");
    $player_names = array("Chris", "Sam", "Bob", "PowderPuff");
-   shuffle($player_names);
+
   
    
     $players = array();
@@ -124,6 +124,7 @@ function displayWinner($players)
 
     shuffle($players);
 
+    shuffle($players);
 
 ?>
 
