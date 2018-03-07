@@ -32,6 +32,8 @@
         <a href="./Labs/Slot Machine/index.php">Slot Machine</a>
         <br>
         <a href="./Labs/Arrays/index.php">Arrays</a>
+        <br>
+        <a href="./Labs/Tech Checkout/index.php">Tech Checkout</a>
     </body>
 
 </html>
