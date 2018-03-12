@@ -34,6 +34,10 @@
         <a href="./Labs/Arrays/index.php">Arrays</a>
         <br>
         <a href="./Labs/Tech Checkout/index.php">Tech Checkout</a>
+        <hr/>
+        
+        <h1><u>Examples</u></h1>
+        <a href="./Examples/Forms/index.php">Forms</a>
     </body>
 
 </html>
