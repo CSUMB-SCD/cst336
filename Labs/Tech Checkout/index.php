@@ -70,7 +70,8 @@
           
             $stmt->execute();
             
-            
+            var_dump($host);
+            var_dump($username);
             
             echo "<table>";
             echo "<tr><th>Device_Name</th> <th>Device_Type</th> <th>Status</th></tr>";
