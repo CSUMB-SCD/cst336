@@ -52,11 +52,22 @@
             $password = "";
             
             $dbConn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-       
-            $sql = 'SELECT * from device where device.deviceName = ' . $_GET['device_name'] . ';';
+            
+            if(isset($_GET['device_name']) && isset($_GET['device_type']) && isset($_GET['device_status']))
+            {
+                
+                $sql = "SELECT * from device where deviceName LIKE " . "'%". $_GET['device_name'] . "%'" . " AND deviceType = '" . $_GET['device_type'] . "' AND status = '" . $_GET['device_status'] . "';";
+            }
+            else if(isset($_GET['device_name']))
+            {
+                $sql = "SELECT * from device where deviceName LIKE " . "'%" . $_GET['device_name'] . "%'" . ";";
+            }
+            
+           
+          
             $stmt = $dbConn->prepare($sql);
             
-            var_dump($sql);
+          
             $stmt->execute();
             
             
