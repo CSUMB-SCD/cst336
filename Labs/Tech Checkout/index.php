@@ -39,7 +39,7 @@
 </html>
 
 <?php
-    var_dump("test");
+    
     if ($_SERVER['REQUEST_METHOD'] === 'GET')
     {
         if(isset($_GET['filter']))

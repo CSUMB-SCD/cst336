@@ -1,0 +1,26 @@
+.container{
+    text-align: center;
+    margin: 5%;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+p {
+    font-size: 23px;
+    text-align: left;
+}
+
+table, td{
+    border: 1px solid gray;
+    margin: auto;
+    font-size: 20px;
+}
+table{
+    box-shadow:5px 5px 5px black;
+    background-color: gray;
+    margin-top: 0px;
+    color: white;
+}
+td{
+    padding: 10px;
+    border-radius: 5px;
+}

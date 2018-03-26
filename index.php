@@ -21,7 +21,9 @@
         <a href="./Assignments/Homework 2/index.php">Homework 2</a>
         <hr/>
         
-        
+        <h1><u>Project</u></h1>
+        <a href="./Project/index.php">Project Page</a>
+        <hr/>
         <h1><u>Labs</u></h1>
         <a href="./Labs/PersonalPortfolio/index.html">Personal Portfolio</a>
         <br>
@@ -34,6 +36,8 @@
         <a href="./Labs/Arrays/index.php">Arrays</a>
         <br>
         <a href="./Labs/Tech Checkout/index.php">Tech Checkout</a>
+        <br>
+        <a href="./Labs/Authentication/index.php">Authentication</a>
         <hr/>
         
         <h1><u>Examples</u></h1>
