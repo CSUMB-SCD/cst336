@@ -76,8 +76,10 @@
                 echo "<div>";
                 for($i = 0; $i < count($result_movie); $i++)
                 {
+
                     echo"<img src= '" . $result_movie[$i][4] . "'height=300 width=200/>";
                     echo"<h3>" . $result_movie[$i][0] ."</h3>";
+
                 }
                 echo "</div>";
                     // $image = $row['image_url'];
@@ -95,21 +97,15 @@
                 echo "<div>";
                 for($i = 0; $i < count($result_prop); $i++)
                 {
-                    echo"<img src= '" . $result_prop[$i][3] . "'height=300 width=200/>";
+                    echo"<img src= '" . $result_prop[$i][2] . "'height=300 width=200/>";
                     echo"<h3>" . $result_prop[$i][0] ."</h3>";
+
+    
+
                 }
                 echo "</div>";    
                 
                
-        ?>
-        <?php
-                    $count++;
-                    if($count == 3)
-                    {
-                        echo"<br></br>";
-                        $count = 0;
-                    }
-                
         ?>
     </div>
 </body>
