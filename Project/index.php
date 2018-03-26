@@ -67,17 +67,17 @@
         <?php
             $show = $_GET["show"];
             
-                $sql = "SELECT * FROM movie;";
+                $sql = "select movie.title, movie.description, movie.year, movie.genre, movie.poster_url, inventory.id, inventory.quantity, inventory.amount from movie inner join inventory_movie on movie.title = inventory_movie.title inner join inventory on inventory_movie.id = inventory.id;";
                 $stmt = $dbConn->prepare($sql);
                 $stmt->execute();
                 $count = 0;
-                $result = $stmt->fetchAll();
+                $result_movie = $stmt->fetchAll();
                 
                 echo "<div>";
-                for($i = 0; $i < count($result); $i++)
+                for($i = 0; $i < count($result_movie); $i++)
                 {
-                    echo"<img src= '" . $result[$i][4] . "'height=300 width=200/>";
-                    echo"<h3>" . $result[$i][0] ."</h3>";
+                    echo"<img src= '" . $result_movie[$i][4] . "'height=300 width=200/>";
+                    echo"<h3>" . $result_movie[$i][0] ."</h3>";
                 }
                 echo "</div>";
                     // $image = $row['image_url'];
@@ -86,17 +86,17 @@
                     // $movieGenre = $row['genre'];
                     // $movieYear = $row['year'];
                     
-                $sql = "SELECT * FROM prop;";
+                $sql = "select prop.name, prop.description, prop.image_url, inventory.id, inventory.quantity, inventory.amount from prop inner join inventory_prop on prop.name = inventory_prop.name inner join inventory on inventory_prop.id = inventory.id;";
                 $stmt = $dbConn->prepare($sql);
                 $stmt->execute();
                 $count = 0;
-                $result = $stmt->fetchAll();
+                $result_prop = $stmt->fetchAll();
                 
                 echo "<div>";
-                for($i = 0; $i < count($result); $i++)
+                for($i = 0; $i < count($result_prop); $i++)
                 {
-                    echo"<img src= '" . $result[$i][3] . "'height=300 width=200/>";
-                    echo"<h3>" . $result[$i][0] ."</h3>";
+                    echo"<img src= '" . $result_prop[$i][3] . "'height=300 width=200/>";
+                    echo"<h3>" . $result_prop[$i][0] ."</h3>";
                 }
                 echo "</div>";    
                 
