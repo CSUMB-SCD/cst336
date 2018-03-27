@@ -21,7 +21,7 @@
     <div class="container">    
         <h1>Movies and Props Galore</h1>
         <table>
-            <form id = "formElements" action="index.php?show=true" method = "post" name="filter">
+            <form id = "formElements" action="index.php?show=true" method = "GET">
                 <tr>
                     <td>
                         <div id="sortByYear">
@@ -58,7 +58,7 @@
                     </td>
                     <td>
                         <div id = "submitButtonDiv">
-                            <input class="button" type="submit" value="Apply Filters"/><br></br>
+                            <input class="button" type="submit" name="filter" value="Apply Filters"/><br></br>
                         </div>
                     </td>
                 </tr>
@@ -66,8 +66,20 @@
         </table>
         <?php
             $show = $_GET["show"];
-            
-                $sql = "select movie.title, movie.description, movie.year, movie.genre, movie.poster_url, inventory.id, inventory.quantity, inventory.amount from movie inner join inventory_movie on movie.title = inventory_movie.title inner join inventory on inventory_movie.id = inventory.id;";
+                
+                if($_GET['sort'] == "ascending" && isset($_GET['filter']))
+                {
+                    $sql = "select movie.title, movie.description, movie.year, movie.genre, movie.poster_url, inventory.id, inventory.quantity, inventory.amount from movie inner join inventory_movie on movie.title = inventory_movie.title inner join inventory on inventory_movie.id = inventory.id order by movie.title ASC;";
+                }
+                else if($_GET['sort'] == "descending" && isset($_GET['filter']))
+                {
+                    $sql = "select movie.title, movie.description, movie.year, movie.genre, movie.poster_url, inventory.id, inventory.quantity, inventory.amount from movie inner join inventory_movie on movie.title = inventory_movie.title inner join inventory on inventory_movie.id = inventory.id order by movie.title DESC;";
+                }
+                else {
+                    $sql = "select movie.title, movie.description, movie.year, movie.genre, movie.poster_url, inventory.id, inventory.quantity, inventory.amount from movie inner join inventory_movie on movie.title = inventory_movie.title inner join inventory on inventory_movie.id = inventory.id;";
+                }
+                
+                
                 $stmt = $dbConn->prepare($sql);
                 $stmt->execute();
                 $count = 0;
@@ -82,11 +94,6 @@
 
                 }
                 echo "</div>";
-                    // $image = $row['image_url'];
-                    // $movieTitle = $row['movie_title'];
-                    // $propName = $row['name'];
-                    // $movieGenre = $row['genre'];
-                    // $movieYear = $row['year'];
                     
                 $sql = "select prop.name, prop.description, prop.image_url, inventory.id, inventory.quantity, inventory.amount from prop inner join inventory_prop on prop.name = inventory_prop.name inner join inventory on inventory_prop.id = inventory.id;";
                 $stmt = $dbConn->prepare($sql);
@@ -94,16 +101,16 @@
                 $count = 0;
                 $result_prop = $stmt->fetchAll();
                 
-                echo "<div>";
-                for($i = 0; $i < count($result_prop); $i++)
-                {
-                    echo"<img src= '" . $result_prop[$i][2] . "'height=300 width=200/>";
-                    echo"<h3>" . $result_prop[$i][0] ."</h3>";
+                // echo "<div>";
+                // for($i = 0; $i < count($result_prop); $i++)
+                // {
+                //     echo"<img src= '" . $result_prop[$i][2] . "'height=300 width=200/>";
+                //     echo"<h3>" . $result_prop[$i][0] ."</h3>";
 
     
 
-                }
-                echo "</div>";    
+                // }
+                // echo "</div>";    
                 
                
         ?>
