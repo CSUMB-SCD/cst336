@@ -64,6 +64,8 @@
                 </tr>
             </form>
         </table>
+        
+        <div id = results>
         <?php
             $show = $_GET["show"];
                 
@@ -85,7 +87,7 @@
                 $count = 0;
                 $result_movie = $stmt->fetchAll();
                 
-                echo "<div>";
+                
                 for($i = 0; $i < count($result_movie); $i++)
                 {
 
@@ -93,7 +95,7 @@
                     echo"<h3>" . $result_movie[$i][0] ."</h3>";
 
                 }
-                echo "</div>";
+               
                     
                 $sql = "select prop.name, prop.description, prop.image_url, inventory.id, inventory.quantity, inventory.amount from prop inner join inventory_prop on prop.name = inventory_prop.name inner join inventory on inventory_prop.id = inventory.id;";
                 $stmt = $dbConn->prepare($sql);
@@ -101,19 +103,8 @@
                 $count = 0;
                 $result_prop = $stmt->fetchAll();
                 
-                // echo "<div>";
-                // for($i = 0; $i < count($result_prop); $i++)
-                // {
-                //     echo"<img src= '" . $result_prop[$i][2] . "'height=300 width=200/>";
-                //     echo"<h3>" . $result_prop[$i][0] ."</h3>";
-
-    
-
-                // }
-                // echo "</div>";    
-                
-               
         ?>
+        </div>
     </div>
 </body>
 </html>
