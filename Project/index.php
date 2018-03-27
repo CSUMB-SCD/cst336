@@ -65,7 +65,7 @@
             </form>
         </table>
         
-        <div id = results>
+        <div>
         <?php
             $show = $_GET["show"];
                 
