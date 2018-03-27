@@ -94,7 +94,7 @@
                 <?php
                     for($i = 0; $i < count($result_movie); $i++)
                     {
-                        echo '<div style="display:inline-block;margin-left:10px;">';
+                        echo '<div style="display:inline-block;margin-left:10px;text-align:center;">';
                         echo"<img src= '" . $result_movie[$i][4] . "'height=300 width=200/>";
                         echo"<h3>" . $result_movie[$i][0] ."</h3>";
                         echo "</div>";
@@ -120,7 +120,7 @@
                     
                     for($i = 0; $i < count($result_prop); $i++)
                     {
-                        echo '<div style="display:inline-block;margin-left:10px;">';
+                        echo '<div style="display:inline-block;margin-left:10px;text-align:center;">';
                         echo"<img src= '" . $result_prop[$i][2] . "'height=300 width=200/>";
                         echo"<h3>" . $result_prop[$i][0] ."</h3>";
                         echo "</div>";
