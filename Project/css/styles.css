@@ -24,3 +24,8 @@ td{
     padding: 10px;
     border-radius: 5px;
 }
+
+.movie{
+    display: inline;
+    margin-left: 5px;
+}
