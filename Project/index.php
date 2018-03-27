@@ -64,6 +64,7 @@
                 </tr>
             </form>
         </table>
+        </div>
         <br>
         <div>
             <?php
@@ -108,6 +109,6 @@
                 ?>
                 </div>
         </div>
-    </div>
+    
 </body>
 </html>
