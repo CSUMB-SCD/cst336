@@ -64,7 +64,7 @@
                 </tr>
             </form>
         </table>
-        
+        <br>
         <div>
         <?php
             $show = $_GET["show"];
