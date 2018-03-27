@@ -25,6 +25,6 @@ td{
     border-radius: 5px;
 }
 
-.results{
-    margin-top: 10%;
+#results{
+    margin-top: 100px;
 }

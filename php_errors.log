@@ -89,3 +89,6 @@ Stack trace:
 [27-Mar-2018 01:10:08 UTC] PHP Notice:  Undefined index: show in /home/ubuntu/workspace/Project/index.php on line 68
 [27-Mar-2018 01:10:10 UTC] PHP Notice:  Undefined index: show in /home/ubuntu/workspace/Project/index.php on line 68
 [27-Mar-2018 01:11:37 UTC] PHP Notice:  Undefined index: show in /home/ubuntu/workspace/Project/index.php on line 68
+[27-Mar-2018 01:15:47 UTC] PHP Notice:  Undefined index: show in /home/ubuntu/workspace/Project/index.php on line 70
+[27-Mar-2018 01:15:47 UTC] PHP Notice:  Undefined index: sort in /home/ubuntu/workspace/Project/index.php on line 72
+[27-Mar-2018 01:15:47 UTC] PHP Notice:  Undefined index: sort in /home/ubuntu/workspace/Project/index.php on line 76
