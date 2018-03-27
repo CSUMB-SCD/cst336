@@ -89,13 +89,14 @@
                     $result_movie = $stmt->fetchAll();
                     
                 ?>
-                <div class="movie">
+                <div class="results">
                 <?php
                     for($i = 0; $i < count($result_movie); $i++)
                     {
-                        
+                        echo "<div class=movie>";
                         echo"<img src= '" . $result_movie[$i][4] . "'height=300 width=200/>";
                         echo"<h3>" . $result_movie[$i][0] ."</h3>";
+                        echo "</div>";
                         
                     }
                    
