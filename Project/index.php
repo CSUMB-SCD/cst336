@@ -110,7 +110,7 @@
                 <br>
                 
                 <div id="props">
-                    
+                <h3><u>Props</u></h3>
                 <?php
                     $sql = "select prop.name, prop.description, prop.image_url, inventory.id, inventory.quantity, inventory.amount from prop inner join inventory_prop on prop.name = inventory_prop.name inner join inventory on inventory_prop.id = inventory.id;";
                     $stmt = $dbConn->prepare($sql);
