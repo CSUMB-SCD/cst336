@@ -92,3 +92,11 @@ Stack trace:
 [27-Mar-2018 01:15:47 UTC] PHP Notice:  Undefined index: show in /home/ubuntu/workspace/Project/index.php on line 70
 [27-Mar-2018 01:15:47 UTC] PHP Notice:  Undefined index: sort in /home/ubuntu/workspace/Project/index.php on line 72
 [27-Mar-2018 01:15:47 UTC] PHP Notice:  Undefined index: sort in /home/ubuntu/workspace/Project/index.php on line 76
+[27-Mar-2018 03:30:31 UTC] PHP Notice:  Undefined index: show in /home/ubuntu/workspace/Project/index.php on line 71
+[27-Mar-2018 03:30:31 UTC] PHP Notice:  Undefined index: sort in /home/ubuntu/workspace/Project/index.php on line 73
+[27-Mar-2018 03:30:31 UTC] PHP Notice:  Undefined index: sort in /home/ubuntu/workspace/Project/index.php on line 77
+[27-Mar-2018 04:08:32 UTC] PHP Notice:  Undefined index: show in /home/ubuntu/workspace/Project/index.php on line 71
+[27-Mar-2018 04:08:32 UTC] PHP Notice:  Undefined index: sort in /home/ubuntu/workspace/Project/index.php on line 73
+[27-Mar-2018 04:08:32 UTC] PHP Notice:  Undefined index: sort in /home/ubuntu/workspace/Project/index.php on line 77
+[27-Mar-2018 04:09:07 UTC] PHP Notice:  Undefined index: show in /home/ubuntu/workspace/Project/index.php on line 71
+[27-Mar-2018 04:09:12 UTC] PHP Notice:  Undefined index: show in /home/ubuntu/workspace/Project/index.php on line 71
