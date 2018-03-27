@@ -21,7 +21,7 @@
     <div class="container">    
         <h1>Movies and Props Galore</h1>
      
-      <form action="search.php" method="get" />
+      <form action="./search.php" method="get" />
         <label>
             Search
             <input type="text" name="keywords">
