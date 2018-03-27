@@ -28,10 +28,10 @@
                             <label>Year: </label>
                             <select name="YearList">
                                 <option value="none">Select</option>
-                                <option value="2017">2017</option>
-                                <option value="2016"> 2016</option>
-                                <option value="2015">2015</option>
-                                <option value="2014">2014</option>
+                                <option value=2018>2018</option>
+                                <option value=2017>2017</option>
+                                <option value=2016> 2016</option>
+                                <option value=2015>2015</option>
                             </select>
 
                         </div> 
@@ -45,6 +45,9 @@
                                 <option value="Action"> Action</option>
                                 <option value="Drama">Drama</option>
                                 <option value="Fantasy">Fantasy</option>
+                                <option value="Science fiction">Science fiction</option>
+                                <option value="Thiller">Thiller</option>
+                                <option value="Adventure">Adventure</option>
                             </select>
 
                         </div> 
@@ -82,6 +85,14 @@
                         $sql = "select movie.title, movie.description, movie.year, movie.genre, movie.poster_url, inventory.id, inventory.quantity, inventory.amount from movie inner join inventory_movie on movie.title = inventory_movie.title inner join inventory on inventory_movie.id = inventory.id;";
                     }
                     
+                    if(isset($_GET['GenreList']))
+                    {
+                        $sql = "select movie.title, movie.description, movie.year, movie.genre, movie.poster_url, inventory.id, inventory.quantity, inventory.amount from movie inner join inventory_movie on movie.title = inventory_movie.title inner join inventory on inventory_movie.id = inventory.id where movie.genre = " . $_GET['GenreList'] . ";";
+                    }
+                    else if(isset($_GET['YearList']))
+                    {
+                        $sql = "select movie.title, movie.description, movie.year, movie.genre, movie.poster_url, inventory.id, inventory.quantity, inventory.amount from movie inner join inventory_movie on movie.title = inventory_movie.title inner join inventory on inventory_movie.id = inventory.id where movie.year = " . $_GET['YearList'] . ";";
+                    }
                     
                     $stmt = $dbConn->prepare($sql);
                     $stmt->execute();
