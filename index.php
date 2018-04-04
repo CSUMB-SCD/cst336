@@ -24,6 +24,10 @@
         <h1><u>Project</u></h1>
         <a href="./Project/index.php">Project Page</a>
         <hr/>
+        <h1><u>Midterm</u></h1>
+        <a href="./Midterm/index.php">Midterm Page</a>
+        
+        <hr/>
         <h1><u>Labs</u></h1>
         <a href="./Labs/PersonalPortfolio/index.html">Personal Portfolio</a>
         <br>

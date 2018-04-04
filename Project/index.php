@@ -1,5 +1,22 @@
-
+<?php
+                    
+                    ob_start();
+                    for($i = 0; $i < count($result_movie);$i++)
+                    {
+                        $params_x = 'movie' . ($i+1) . '_x';
+                        $params_y = 'movie' . ($i+1) . '_y';
+                        if(isset($_GET[$params_x],$_GET[$params_y]))
+                        {
+                            $_SESSION['movie'] = $result_movie[$i];
+                            header('Location: /detail.php');
+                            exit();
+                        }
+                        
+                    }
+                
+?>
  <?php
+     session_start();
      $servername = "vvfv20el7sb2enn3.cbetxkdyhwsb.us-east-1.rds.amazonaws.com";
      $database = "rtt8eikccb51c8d3";
      $dbPort = 3306;
@@ -21,16 +38,33 @@
     <div class="container">    
         <h1>Movies and Props Galore</h1>
      
-      <form action="./search.php" method="get" />
+      <form action="./index.php" method="GET" />
         <label>
             Search
             <input type="text" name="keywords">
         </label>
        
-        <input type="submit" value="Search" />
+        <input type="submit" name="search_submit" value="Search" />
         
         
-        
+        <?php
+
+
+
+                if(isset($_GET['keywords']) && isset($_GET['search_submit']))
+                {
+                    $sql = "SELECT title, description, year, genre FROM movie
+                    WHERE title LIKE '%{$keywords}%'
+                    OR description LIKE '%{$keywords}%'
+                    OR year LIKE '%{$keywords}%'
+                    OR genre LIKE '%{$keywords}%'";
+                    
+                    $stmt = $dbConn->prepare($sql);
+                    $stmt->execute();
+                    
+                }
+            
+        ?>
         
         
         </form>
@@ -87,48 +121,63 @@
             <?php
                 $show = $_GET["show"];
                     
-                    if($_GET['sort'] == "ascending" && isset($_GET['filter']))
+                    if($_GET['sort'] == "ascending" && isset($_GET['filter']) && $_GET['GenreList'] == "none" && $_GET['YearList'] == "none")
                     {
                         $sql = "select movie.title, movie.description, movie.year, movie.genre, movie.poster_url, inventory.id, inventory.quantity, inventory.amount from movie inner join inventory_movie on movie.title = inventory_movie.title inner join inventory on inventory_movie.id = inventory.id order by movie.title ASC;";
                     }
-                    else if($_GET['sort'] == "descending" && isset($_GET['filter']))
+                    else if($_GET['sort'] == "descending" && isset($_GET['filter']) && $_GET['GenreList'] == "none" && $_GET['YearList'] == "none")
                     {
                         $sql = "select movie.title, movie.description, movie.year, movie.genre, movie.poster_url, inventory.id, inventory.quantity, inventory.amount from movie inner join inventory_movie on movie.title = inventory_movie.title inner join inventory on inventory_movie.id = inventory.id order by movie.title DESC;";
+                    }
+                    else if(isset($_GET['GenreList']) && $_GET['GenreList'] != "none" && $_GET['YearList'] == "none" && isset($_GET['filter']))
+                    {
+                        if($_GET['sort'] == "ascending")
+                        {
+                            $sql = "select movie.title, movie.description, movie.year, movie.genre, movie.poster_url, inventory.id, inventory.quantity, inventory.amount from movie inner join inventory_movie on movie.title = inventory_movie.title inner join inventory on inventory_movie.id = inventory.id where movie.genre = " . "'" . $_GET['GenreList'] . "'" .  " order by movie.title ASC;";
+                        }
+                        else if($_GET['sort'] == "descending")
+                        {
+                            $sql = "select movie.title, movie.description, movie.year, movie.genre, movie.poster_url, inventory.id, inventory.quantity, inventory.amount from movie inner join inventory_movie on movie.title = inventory_movie.title inner join inventory on inventory_movie.id = inventory.id where movie.genre = " . "'" . $_GET['GenreList'] . "'". " order by movie.title DESC;";
+                        }
+                        else {
+                            $sql = "select movie.title, movie.description, movie.year, movie.genre, movie.poster_url, inventory.id, inventory.quantity, inventory.amount from movie inner join inventory_movie on movie.title = inventory_movie.title inner join inventory on inventory_movie.id = inventory.id where movie.genre = " . "'" . $_GET['GenreList'] . "'" . ";";
+                        }
+                        
+                    }
+                    else if(isset($_GET['YearList']) && $_GET['YearList'] != "none" && $_GET['GenreList'] == "none" && isset($_GET['filter']))
+                    {
+                        if($_GET['sort'] == "ascending")
+                        {
+                            $sql = "select movie.title, movie.description, movie.year, movie.genre, movie.poster_url, inventory.id, inventory.quantity, inventory.amount from movie inner join inventory_movie on movie.title = inventory_movie.title inner join inventory on inventory_movie.id = inventory.id where movie.year = " . $_GET['YearList'] . " order by movie.title ASC;";
+                        }
+                        else if($_GET['sort'] == "descending")
+                        {
+                            $sql = "select movie.title, movie.description, movie.year, movie.genre, movie.poster_url, inventory.id, inventory.quantity, inventory.amount from movie inner join inventory_movie on movie.title = inventory_movie.title inner join inventory on inventory_movie.id = inventory.id where movie.year = " . $_GET['YearList'] . " order by movie.title DESC;";
+                        }
+                        else{
+                            $sql = "select movie.title, movie.description, movie.year, movie.genre, movie.poster_url, inventory.id, inventory.quantity, inventory.amount from movie inner join inventory_movie on movie.title = inventory_movie.title inner join inventory on inventory_movie.id = inventory.id where movie.year = " . $_GET['YearList'] . ";";
+                        }
+                        
+                    }
+                    else if(isset($_GET['YearList']) && isset($_GET['GenreList']) && $_GET['YearList'] != "none" && $_GET['GenreList'] != "none")
+                    {
+                        if($_GET['sort'] == "ascending")
+                        {
+                            $sql = "select movie.title, movie.description, movie.year, movie.genre, movie.poster_url, inventory.id, inventory.quantity, inventory.amount from movie inner join inventory_movie on movie.title = inventory_movie.title inner join inventory on inventory_movie.id = inventory.id where movie.year = " . $_GET['YearList'] . " and movie.genre = " . "'" . $_GET['GenreList'] . "'" . " order by movie.title ASC;";
+                        }
+                        else if($_GET['sort'] == "descending")
+                        {
+                            $sql = "select movie.title, movie.description, movie.year, movie.genre, movie.poster_url, inventory.id, inventory.quantity, inventory.amount from movie inner join inventory_movie on movie.title = inventory_movie.title inner join inventory on inventory_movie.id = inventory.id where movie.year = " . $_GET['YearList'] . " and movie.genre = " . "'" . $_GET['GenreList'] . "'" . " order by movie.title DESC;";
+                        }
+                        else {
+                            $sql = "select movie.title, movie.description, movie.year, movie.genre, movie.poster_url, inventory.id, inventory.quantity, inventory.amount from movie inner join inventory_movie on movie.title = inventory_movie.title inner join inventory on inventory_movie.id = inventory.id where movie.year = " . $_GET['YearList'] . " and movie.genre = " . "'" . $_GET['GenreList'] . "'" . ";";
+                        }
                     }
                     else {
                         $sql = "select movie.title, movie.description, movie.year, movie.genre, movie.poster_url, inventory.id, inventory.quantity, inventory.amount from movie inner join inventory_movie on movie.title = inventory_movie.title inner join inventory on inventory_movie.id = inventory.id;";
                     }
                     
-                    if(isset($_GET['GenreList']) && isset($_GET['filter']))
-                    {
-                        $sql = "select movie.title, movie.description, movie.year, movie.genre, movie.poster_url, inventory.id, inventory.quantity, inventory.amount from movie inner join inventory_movie on movie.title = inventory_movie.title inner join inventory on inventory_movie.id = inventory.id where movie.genre = " . "'" . $_GET['GenreList'] . "'" . ";";
-                    }
-                    else if(isset($_GET['YearList']) && isset($_GET['filter']))
-                    {
-                        $sql = "select movie.title, movie.description, movie.year, movie.genre, movie.poster_url, inventory.id, inventory.quantity, inventory.amount from movie inner join inventory_movie on movie.title = inventory_movie.title inner join inventory on inventory_movie.id = inventory.id where movie.year = " . $_GET['YearList'] . ";";
-                    }
-                    
-                    if(isset($_GET['GenreList']) && $_GET['sort'] == "ascending" && isset($_GET['filter']))
-                    {
-                        $sql = "select movie.title, movie.description, movie.year, movie.genre, movie.poster_url, inventory.id, inventory.quantity, inventory.amount from movie inner join inventory_movie on movie.title = inventory_movie.title inner join inventory on inventory_movie.id = inventory.id where movie.genre = " . "'" . $_GET['GenreList'] . "'" .  " order by movie.title ASC;";
-                    }
-                    
-                    
-                    if(isset($_GET['GenreList']) && $_GET['sort'] == "descending" && isset($_GET['filter']))
-                    {
-                        $sql = "select movie.title, movie.description, movie.year, movie.genre, movie.poster_url, inventory.id, inventory.quantity, inventory.amount from movie inner join inventory_movie on movie.title = inventory_movie.title inner join inventory on inventory_movie.id = inventory.id where movie.genre = " . "'" . $_GET['GenreList'] . "'". " order by movie.title DESC;";
-                    }
-                    
-                    
-                    if(isset($_GET['YearList']) && $_GET['sort'] == "ascending" && isset($_GET['filter']))
-                    {
-                        $sql = "select movie.title, movie.description, movie.year, movie.genre, movie.poster_url, inventory.id, inventory.quantity, inventory.amount from movie inner join inventory_movie on movie.title = inventory_movie.title inner join inventory on inventory_movie.id = inventory.id where movie.year = " . $_GET['YearList'] . " order by movie.title ASC;";
-                    }
-                    
-                    if(isset($_GET['YearList']) && $_GET['sort'] == "descending" && isset($_GET['filter']))
-                    {
-                        $sql = "select movie.title, movie.description, movie.year, movie.genre, movie.poster_url, inventory.id, inventory.quantity, inventory.amount from movie inner join inventory_movie on movie.title = inventory_movie.title inner join inventory on inventory_movie.id = inventory.id where movie.year = " . $_GET['YearList'] . " order by movie.title DESC;";
-                    }
+                
                     
                     $stmt = $dbConn->prepare($sql);
                     $stmt->execute();
@@ -138,19 +187,23 @@
                 ?>
                 <div id="movies">
                 <h3><u>Movies</u></h3>
+                <form action="./index.php" method="GET">
+                    <fieldset name="movies">
                 <?php
                     for($i = 0; $i < count($result_movie); $i++)
                     {
-                        echo '<div style="display:inline-block;margin-left:10px;text-align:center;">';
-                        echo"<img src= '" . $result_movie[$i][4] . "'height=300 width=200/>";
-                        echo"<h3>" . $result_movie[$i][0] ."</h3>";
+                        echo "<div style=" . "display:inline-block;margin-left:10px;text-align:center;" . ">";
+                        echo "<input style=" . "width:200px;height:300px;" . " type=image name=" . "'" . "movie" . ($i+1) . "'" . " src=" . $result_movie[$i][4] . " >";
+                        echo "<br>";
+                        echo "<h3>" . $result_movie[$i][0] . "</h3>";
                         echo "</div>";
-                        
                     }
+                    
                  ?>
-                        
+                    </fieldset> 
+                </form>
                     
-                    
+                
                 
                 </div>
                 
