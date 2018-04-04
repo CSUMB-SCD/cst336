@@ -42,6 +42,8 @@
         <a href="./Labs/Tech Checkout/index.php">Tech Checkout</a>
         <br>
         <a href="./Labs/Authentication/index.php">Authentication</a>
+        <br>
+        <a href="./Labs/JQuery/index.php">JQuery</a>
         <hr/>
         
         <h1><u>Examples</u></h1>
