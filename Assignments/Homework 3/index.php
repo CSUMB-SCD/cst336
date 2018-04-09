@@ -126,10 +126,111 @@
         <script>
             function printPost(post) {
                 $(document).ready(function() {
-                    var html = "<div" + " style=" + "margin:0 auto;" + ">" + "<img src=" + "./images/profilePicture.png" + " width=50 height=50/>" + "<img src=" + "'" + post.photo + "'" + " width=300 height=300/>" + 
-                    "<h2>" + post.text + "</h2>" + "</div>"
-                    $("#posts_section").append(html)
                     
+                  var nodes = new Array();
+                  var div = document.createElement('div')
+                  
+                  
+                  //div elements
+                  
+                  var user = document.createElement('h2')
+                  user.innerHTML = post['username']
+                  nodes.push(user)
+                  
+                  var image = document.createElement('img')
+                  image.setAttribute("src",post['photo'])
+                  image.style.width = '500px'
+                  image.style.height = '500px'
+                  nodes.push(image)
+                  
+                  var post_text = document.createElement('p')
+                  post_text.innerHTML = post['text']
+                  nodes.push(post_text)
+                  
+                  var likes_div = document.createElement('div')
+                  
+                  var likes_icon = document.createElement('img')
+                  likes_icon.setAttribute("src","./images/heartIcon.png")
+                  likes_icon.style.width = '10px'
+                  likes_icon.style.height = '10px'
+                  likes_icon.style.display='inline'
+                  likes_icon.style.marginRight = '5px'
+                  likes_div.appendChild(likes_icon)
+                  
+                  var likes = document.createElement('h3')
+                  likes.innerHTML = post['likes'] + ' likes'
+                  likes.style.display = 'inline'
+                  likes.style.color = '#327FFF'
+                  likes_div.appendChild(likes)
+                  
+
+                  nodes.push(likes_div)
+                  
+                  var comments_div = document.createElement('div')
+                  comments_div.setAttribute("id","comments_div")
+                  
+                  var comments_icon = document.createElement('img')
+                  comments_icon.setAttribute("src","./images/commentIcon.png")
+                  comments_icon.style.width = '10px'
+                  comments_icon.style.height = '10px'
+                  comments_icon.style.display = 'inline'
+                  comments_div.appendChild(comments_icon)
+                  
+                  
+                  var comments = new Array();
+                  
+                  for(var i = 0; i < post['comments'].length; i++)
+                  {
+                    var comment_div = document.createElement('div')
+                    comment_div.style.display = 'inline'
+                    comment_div.style.marginLeft = '10px'
+                    var username = document.createElement('h3')
+                    username.style.marginRight = '5px'
+                    username.style.color = '#327FFF'
+                    username.innerHTML = post['comments'][i]['username']
+                    username.style.display = 'inline'
+                    comment_div.appendChild(username)
+                     
+                    var user_comment = document.createElement('h3')
+                    user_comment.innerHTML = post['comments'][i]['text']
+                    user_comment.style.display = 'block'
+                    comment_div.appendChild(user_comment)
+                    comments.push(comment_div)
+                  }
+                  
+                  
+                  comments_div.appendChild(comments[0])
+                  
+                  if(comments.length > 1)
+                  {
+                    var viewComments = document.createElement('p')
+                    viewComments.innerHTML = 'view all ' + comments.length + ' comments'
+                    viewComments.style.color = 'grey'
+                    comments_div.appendChild(viewComments)
+                    
+                    var hiddenCommentsDiv = document.createElement('div')
+                    hiddenCommentsDiv.setAttribute("id","hiddenComments")
+                    
+                    for(var i = 1; i < comments.length; i++)
+                    {
+                      hiddenCommentsDiv.appendChild(comments[i])
+                    }
+                    
+                    comments_div.appendChild(hiddenCommentsDiv)
+                  }
+                  
+                  
+                  nodes.push(comments_div)
+                  
+                  
+                  for(var i = 0; i < nodes.length; i++)
+                  {
+                    div.appendChild(nodes[i])
+                    nodes[i].style.marginLeft = '40%'
+                    nodes[i].style.paddingBottom = '10px'
+                  }
+                  document.getElementById('posts_section').appendChild(div)
+                  
                     
                     
                 })
@@ -139,6 +240,18 @@
             for(var i = 0; i < data.posts.length; i++)
             {
                 printPost(data.posts[i])
+            }
+            
+            
+            function showComments()
+            {
+              
+            }
+            
+            
+            function hideComments()
+            {
+              
             }
             
         </script>
