@@ -1,0 +1,97 @@
+[09-Apr-2018 19:25:56 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES) in /home/ubuntu/workspace/Labs/Authentication/index.php:7
+Stack trace:
+#0 /home/ubuntu/workspace/Labs/Authentication/index.php(7): PDO->__construct('mysql:host=loca...', 'root', '/')
+#1 {main}
+  thrown in /home/ubuntu/workspace/Labs/Authentication/index.php on line 7
+[09-Apr-2018 19:26:02 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES) in /home/ubuntu/workspace/Labs/Authentication/index.php:7
+Stack trace:
+#0 /home/ubuntu/workspace/Labs/Authentication/index.php(7): PDO->__construct('mysql:host=loca...', 'root', '/')
+#1 {main}
+  thrown in /home/ubuntu/workspace/Labs/Authentication/index.php on line 7
+[09-Apr-2018 19:26:26 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES) in /home/ubuntu/workspace/Labs/Authentication/index.php:7
+Stack trace:
+#0 /home/ubuntu/workspace/Labs/Authentication/index.php(7): PDO->__construct('mysql:host=loca...', 'root', '/')
+#1 {main}
+  thrown in /home/ubuntu/workspace/Labs/Authentication/index.php on line 7
+[09-Apr-2018 19:26:27 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES) in /home/ubuntu/workspace/Labs/Authentication/index.php:7
+Stack trace:
+#0 /home/ubuntu/workspace/Labs/Authentication/index.php(7): PDO->__construct('mysql:host=loca...', 'root', '/')
+#1 {main}
+  thrown in /home/ubuntu/workspace/Labs/Authentication/index.php on line 7
+[09-Apr-2018 19:26:36 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES) in /home/ubuntu/workspace/Labs/Authentication/index.php:7
+Stack trace:
+#0 /home/ubuntu/workspace/Labs/Authentication/index.php(7): PDO->__construct('mysql:host=loca...', 'root', '/')
+#1 {main}
+  thrown in /home/ubuntu/workspace/Labs/Authentication/index.php on line 7
+[09-Apr-2018 19:27:14 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES) in /home/ubuntu/workspace/Labs/Authentication/index.php:7
+Stack trace:
+#0 /home/ubuntu/workspace/Labs/Authentication/index.php(7): PDO->__construct('mysql:host=loca...', 'root', '/')
+#1 {main}
+  thrown in /home/ubuntu/workspace/Labs/Authentication/index.php on line 7
+[09-Apr-2018 19:27:15 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES) in /home/ubuntu/workspace/Labs/Authentication/index.php:7
+Stack trace:
+#0 /home/ubuntu/workspace/Labs/Authentication/index.php(7): PDO->__construct('mysql:host=loca...', 'root', '/')
+#1 {main}
+  thrown in /home/ubuntu/workspace/Labs/Authentication/index.php on line 7
+[09-Apr-2018 19:27:16 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES) in /home/ubuntu/workspace/Labs/Authentication/index.php:7
+Stack trace:
+#0 /home/ubuntu/workspace/Labs/Authentication/index.php(7): PDO->__construct('mysql:host=loca...', 'root', '/')
+#1 {main}
+  thrown in /home/ubuntu/workspace/Labs/Authentication/index.php on line 7
+[09-Apr-2018 19:28:33 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES) in /home/ubuntu/workspace/Labs/Authentication/index.php:7
+Stack trace:
+#0 /home/ubuntu/workspace/Labs/Authentication/index.php(7): PDO->__construct('mysql:host=127....', 'root', '/')
+#1 {main}
+  thrown in /home/ubuntu/workspace/Labs/Authentication/index.php on line 7
+[09-Apr-2018 19:28:34 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES) in /home/ubuntu/workspace/Labs/Authentication/index.php:7
+Stack trace:
+#0 /home/ubuntu/workspace/Labs/Authentication/index.php(7): PDO->__construct('mysql:host=127....', 'root', '/')
+#1 {main}
+  thrown in /home/ubuntu/workspace/Labs/Authentication/index.php on line 7
+[09-Apr-2018 19:31:30 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /home/ubuntu/workspace/Labs/Authentication/index.php on line 9
+[09-Apr-2018 19:33:21 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /home/ubuntu/workspace/Labs/Authentication/index.php on line 9
+[09-Apr-2018 19:33:21 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/ubuntu/workspace/Labs/Authentication/index.php on line 11
+[09-Apr-2018 19:33:22 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /home/ubuntu/workspace/Labs/Authentication/index.php on line 9
+[09-Apr-2018 19:33:22 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/ubuntu/workspace/Labs/Authentication/index.php on line 11
+[09-Apr-2018 19:33:37 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /home/ubuntu/workspace/Labs/Authentication/index.php on line 9
+[09-Apr-2018 19:33:37 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/ubuntu/workspace/Labs/Authentication/index.php on line 11
+[09-Apr-2018 19:33:38 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /home/ubuntu/workspace/Labs/Authentication/index.php on line 9
+[09-Apr-2018 19:33:38 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/ubuntu/workspace/Labs/Authentication/index.php on line 11
+[09-Apr-2018 19:33:40 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /home/ubuntu/workspace/Labs/Authentication/index.php on line 9
+[09-Apr-2018 19:33:40 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/ubuntu/workspace/Labs/Authentication/index.php on line 11
+[09-Apr-2018 19:33:55 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /home/ubuntu/workspace/Labs/Authentication/index.php on line 9
+[09-Apr-2018 19:33:55 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/ubuntu/workspace/Labs/Authentication/index.php on line 11
+[09-Apr-2018 19:33:56 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /home/ubuntu/workspace/Labs/Authentication/index.php on line 9
+[09-Apr-2018 19:33:56 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/ubuntu/workspace/Labs/Authentication/index.php on line 11
+[09-Apr-2018 19:36:23 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES) in /home/ubuntu/workspace/Labs/Authentication/index.php:7
+Stack trace:
+#0 /home/ubuntu/workspace/Labs/Authentication/index.php(7): PDO->__construct('mysql:host=0.0....', 'root', '/')
+#1 {main}
+  thrown in /home/ubuntu/workspace/Labs/Authentication/index.php on line 7
+[09-Apr-2018 19:36:29 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES) in /home/ubuntu/workspace/Labs/Authentication/index.php:7
+Stack trace:
+#0 /home/ubuntu/workspace/Labs/Authentication/index.php(7): PDO->__construct('mysql:host=0.0....', 'root', '/')
+#1 {main}
+  thrown in /home/ubuntu/workspace/Labs/Authentication/index.php on line 7
+[09-Apr-2018 19:36:30 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES) in /home/ubuntu/workspace/Labs/Authentication/index.php:7
+Stack trace:
+#0 /home/ubuntu/workspace/Labs/Authentication/index.php(7): PDO->__construct('mysql:host=0.0....', 'root', '/')
+#1 {main}
+  thrown in /home/ubuntu/workspace/Labs/Authentication/index.php on line 7
+[09-Apr-2018 19:36:57 UTC] PHP Parse error:  syntax error, unexpected 'authentication' (T_STRING) in /home/ubuntu/workspace/Labs/Authentication/index.php on line 3
+[09-Apr-2018 19:36:57 UTC] PHP Parse error:  syntax error, unexpected 'authentication' (T_STRING) in /home/ubuntu/workspace/Labs/Authentication/index.php on line 3
+[09-Apr-2018 19:37:16 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES) in /home/ubuntu/workspace/Labs/Authentication/index.php:7
+Stack trace:
+#0 /home/ubuntu/workspace/Labs/Authentication/index.php(7): PDO->__construct('mysql:host=127....', 'root', '/')
+#1 {main}
+  thrown in /home/ubuntu/workspace/Labs/Authentication/index.php on line 7
+[09-Apr-2018 19:37:17 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES) in /home/ubuntu/workspace/Labs/Authentication/index.php:7
+Stack trace:
+#0 /home/ubuntu/workspace/Labs/Authentication/index.php(7): PDO->__construct('mysql:host=127....', 'root', '/')
+#1 {main}
+  thrown in /home/ubuntu/workspace/Labs/Authentication/index.php on line 7
+[09-Apr-2018 19:39:31 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES) in /home/ubuntu/workspace/Labs/Authentication/index.php:7
+Stack trace:
+#0 /home/ubuntu/workspace/Labs/Authentication/index.php(7): PDO->__construct('mysql:host=127....', 'root', 's3c3et')
+#1 {main}
+  thrown in /home/ubuntu/workspace/Labs/Authentication/index.php on line 7
