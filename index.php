@@ -19,6 +19,8 @@
         <a href="./Assignments/Homework 1/index.html">Homework 1</a>
         <br>
         <a href="./Assignments/Homework 2/index.php">Homework 2</a>
+        <br>
+        <a href="./Assignments/Homework 3/index.php">Homework 3</a>
         <hr/>
         
         <h1><u>Project</u></h1>
@@ -42,8 +44,7 @@
         <a href="./Labs/Tech Checkout/index.php">Tech Checkout</a>
         <br>
         <a href="./Labs/Authentication/index.php">Authentication</a>
-        <br>
-        <a href="./Labs/JQuery/index.php">JQuery</a>
+        
         <hr/>
         
         <h1><u>Examples</u></h1>
