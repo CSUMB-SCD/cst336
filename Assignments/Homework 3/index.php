@@ -8,6 +8,7 @@
       photo: './images/turtle-sandwich.png',
       username: 'profjason',
       likes: 43,
+      spam: false,
       comments: [
         {
           text: "funny looking turtle",
@@ -27,6 +28,7 @@
       photo: './images/resort.jpg',
       username: 'tommy',
       likes: 186,
+      spam: false,
       comments: [
         {
           text: "@tommy you will NEVER retire! too many spenders in your camp!",
@@ -51,6 +53,7 @@
       photo: './images/shark-wave.jpg',
       username: 'sarahlives',
       likes: 22,
+      spam: false,
       comments: [
         {
           text: "yep",
@@ -65,6 +68,7 @@
       photo: './images/space.jpg',
       username: 'nocluebill',
       likes: 1,
+      spam: false,
     },
     {
       text: 'smash it like a bug!',
@@ -72,6 +76,7 @@
       photo: './images/parrot-smash.jpg',
       username: 'dropandroll',
       likes: 22,
+      spam: false,
       comments: [
         {
           text: "this is how my dad taught me to do it too!",
@@ -124,12 +129,12 @@
         
         
         <script>
-            function printPost(post) {
+            function printPost(post,num) {
                 $(document).ready(function() {
                     
                   var nodes = new Array();
                   var div = document.createElement('div')
-                  
+                  div.setAttribute("id","post"+num)
                   
                   //div elements
                   
@@ -182,7 +187,7 @@
                   for(var i = 0; i < post['comments'].length; i++)
                   {
                     var comment_div = document.createElement('div')
-                    comment_div.style.display = 'inline'
+                    comment_div.style.display = 'block'
                     comment_div.style.marginLeft = '10px'
                     var username = document.createElement('h3')
                     username.style.marginRight = '5px'
@@ -193,35 +198,60 @@
                      
                     var user_comment = document.createElement('h3')
                     user_comment.innerHTML = post['comments'][i]['text']
-                    user_comment.style.display = 'block'
+                    user_comment.style.display = 'inline'
                     comment_div.appendChild(user_comment)
                     comments.push(comment_div)
                   }
                   
-                  
+                  comments[0].style.display = 'inline'
                   comments_div.appendChild(comments[0])
                   
                   if(comments.length > 1)
                   {
                     var viewComments = document.createElement('p')
+                    viewComments.setAttribute("id","viewComments")
                     viewComments.innerHTML = 'view all ' + comments.length + ' comments'
                     viewComments.style.color = 'grey'
+                    viewComments.style.cursor = 'pointer'
                     comments_div.appendChild(viewComments)
                     
                     var hiddenCommentsDiv = document.createElement('div')
                     hiddenCommentsDiv.setAttribute("id","hiddenComments")
-                    
+                    hiddenCommentsDiv.style.visibility = 'hidden'
                     for(var i = 1; i < comments.length; i++)
                     {
                       hiddenCommentsDiv.appendChild(comments[i])
                     }
                     
+                
                     comments_div.appendChild(hiddenCommentsDiv)
+                    
+                    viewComments.addEventListener("click",function(){
+                      
+                      if(hiddenCommentsDiv.style.visibility == "hidden")
+                      {
+                        hiddenCommentsDiv.style.visibility = "visible"
+                      }
+                      else if(hiddenCommentsDiv.style.visibility == "visible")
+                      {
+                        hiddenCommentsDiv.style.visibility = "hidden"
+                      }
+                      
+                    })
+                    
+                    
+                    var spam_button = document.createElement('button')
+                    spam_button.innerHTML = "Report spam"
+                    spam_button.addEventListener("click",function(){
+                      post['spam'] = true
+                      
+                    })
+                    
                   }
                   
                   
                   nodes.push(comments_div)
-                  
+                  nodes.push(spam_button)
                   
                   for(var i = 0; i < nodes.length; i++)
                   {
@@ -239,20 +269,13 @@
             
             for(var i = 0; i < data.posts.length; i++)
             {
-                printPost(data.posts[i])
+              if(data.posts[i]['spam'] == false)
+              {
+                printPost(data.posts[i],i)
+              }
             }
             
-            
-            function showComments()
-            {
-              
-            }
-            
-            
-            function hideComments()
-            {
-              
-            }
+          
             
         </script>
         
